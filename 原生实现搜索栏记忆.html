@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        ul{
+            list-style: none;
+        }
+        .l,.d li{
+            width:200px;
+            height:30px;
+            border:1px solid #ddd;
+            padding-left:10px;
+            line-height:30px;
+        }
+        .search{
+            position:absolute;
+            left:50%;
+            top:50%;
+            marign-left:100px;
+            margin-top:15px;
+        }
+        li span{
+            float:right;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="search">
+        <input type="text" id="sea" class="l">
+        <div class="d" id="res">
+            <ul id="ul">
+            </ul>
+        </div>
+    </div>
+    <script>
+        var res =document.getElementById('res');
+        var sea =document.getElementById('sea');
+        var ul =document.getElementById('ul');
+        console.log(sea)
+//        sea.onclick=function(){
+//
+//        }
+        var list=[]
+        window.document.onkeydown=function(e){
+            if(e.keyCode==13){
+                console.log(e.keyCode,sea.value)
+                list.push(sea.value)
+                sea.value=''
+                console.log(list)
+            }
+            if(e.keyCode==38){
+                query()
+                sea.value=''
+            }
+            if(e.keyCode==40){
+                clear()
+            }
+        }
+        /**删除**/
+        ul.onclick=function(ev){
+            var target=ev.target;
+            console.log(target)
+            this.removeChild(target)
+        }
+        /**失去焦点**/
+//        sea.onblur=function(){
+//            clear()
+//        }
+        sea.focus=function(){
+            query()
+        }
+        /**内容改变时触发**/
+        sea.oninput=function(){
+            clear()
+            query()
+            console.log(sea.value)
+        }
+        /**匹配**/
+        function clear(){
+            ul.innerHTML=''
+        }
+        function query(){
+            function exam(value) {
+                if(value.indexOf(val)!=-1){
+                    return value
+                }
+            }
+            var val=sea.value;
+            var res=list.filter(exam)
+            console.log(res)
+
+            for(var i=0;i<res.length;i++){
+                var li=document.createElement('li')
+                var span=document.createElement('span')
+                var text=document.createTextNode(res[i])
+                var text1=document.createTextNode('x')
+                li.appendChild(text)
+                span.appendChild(text1)
+                li.appendChild(span)
+                //console.log(li)
+                ul.appendChild(li)
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> 京东商城－购物车 </title>
+        <meta charset="utf-8"/>
+        <!--<script src="js/sendJSON.js"></script>-->
+        <script src="js/jquery-1.11.3.js"></script>
+    </head>
+    <body>
+    <script>
+        /**发送JSON数组给服务器端**/
+        var stu1={name:"Bob",age:10}
+        var stu2={name:"Bill",age:12}
+        var stus=[{name:"Bob",age:10},{name:"Bill",age:12}]
+
+        function sendJSONArray(url,sendData){
+            $.ajax({
+                type:'POST',
+                url:url,
+                data:{list:sendData},
+                success:function(data){
+                    console.log(data)
+                },
+                error:function(){
+                    console.log('0')
+                }
+            })
+        }
+        sendJSONArray('data/sendArray.php',stus)
+    </script>
+    </body>
+</html>

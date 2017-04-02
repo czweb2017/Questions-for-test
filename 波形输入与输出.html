@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var input=['--+------+++++-+--+++',
+        '__/\/\____'];
+    var arr=[]
+    var len=2
+    var res=[]
+    var str
+//    for(var i=0;i<len;i++){
+//        arr[i]=read_line();
+//    }
+    arr=input
+    for(var i=0;i<len;i++){
+        var arrLen=arr[i].length
+        str=''
+        for(var j=0;j<arrLen;j++){
+            if(arr[i].charAt(j)=='/'){
+                str=str+'+'
+                j++
+            }else if(arr[i].charAt(j)=='_'){
+                str=str+'-'
+                j++
+            }else if(arr[i].charAt(j)=='+'){
+            str=str+'/\\'
+        }else if(arr[i].charAt(j)=='-'){
+        str=str+'__'
+    }
+    }
+    res[i]=str
+    }
+    for(var i=0;i<len;i++){
+        console.log(res[i])
+    }
+//    for(var i=0;i<len;i++){
+//        var arrLen=arr[i].length
+//        str=''
+//        for(var j=0;j<arrLen;j++){
+//            if(arr[i].charAt(j)=='/'){
+//                str=str+transform(arr[i].charAt(j))
+//                j++
+//            }else{
+//                str=str+transform(arr[i].charAt(j))
+//            }
+//        }
+//        res[i]=str
+//    }
+//    for(var i=0;i<len;i++){
+//        console.log(res[i])
+//    }
+//    function transform(str){
+//        if(str=='-'){
+//            return '_'
+//        }else if(str=='+'){
+//            return '/\\';
+//        }else if(str=='/'){
+//            return '+'
+//    }else if(str=='_'){
+//        return '-'
+//    }
+//    }
+</script>
+</body>
+</html>

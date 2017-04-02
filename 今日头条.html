@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;margin: 0;
+        }
+        .b{
+            color: yellow !important;
+        }
+        .b{
+            color: red !important;
+        }
+
+    </style>
+</head>
+<body>
+<table border="3" cellspacing="4">
+    <tr>
+        <td width="121"></td>
+        <td width="121">row 1, cell 2</td>
+        <td width="121">row 1, cell 2</td>
+        <td width="121">row 1, cell 2</td>
+        <td width="121">row 1, cell 2</td>
+    </tr>
+</table>
+<div class="b"><p class="a">123</p></div>
+<script>
+//    var str='3 2';
+//    var arr=str.split(' ')
+//    var n=arr[0];
+//    var q=arr[1];
+//    var A='3 2 4'.split(' ');
+//    var B='6 5 8'.split(' ');
+//    var query=[]
+//    query[0]='1 1'.split(' ');
+//    query[1]='4 8'.split(' ');
+//    var res=[];
+//    for(i=0;i<q;i++){
+//        var count=0;
+//        for(var j=0;j<n;j++){
+//            if(query[i][0]<=A[j]&&query[i][1]<=B[j]){
+//                count++;
+//            }
+//        }
+//        res.push(count)
+//    }
+//    console.log(res)11
+
+    var n='10';
+    var str='4 3 2 1 3 1 4 5 6 1';
+    var str='1 3 1 2 4 2 3 2 9 1';
+var str='1 2 3 4 5 6 7 8 9';
+var str='9 8 7 6 5 4 3 2 1';
+var str='5432123456';
+    console.log(str)
+    console.log('0 1 2 3 4 5 6 7 8 9')
+    var array=str.split(' ');
+    array=array.map(function(el){return parseInt(el)})
+    console.log(array)
+    var res=[];
+    console.log(res.length)
+    for(var i=1;i<array.length-1;i++){
+        if(array[i]<array[i-1]&&array[i]<array[i+1]){
+            res.push(i)
+        }
+    }
+    if(array[0]<array[1]){
+        res.unshift(0)
+    }
+    if(array[9]<array[8]){
+        res.push(9)
+    }
+    console.log(res)
+    var max=res[1]-res[0];
+    var start=0;
+    for(var i=1;i<res.length;i++){
+        var value=res[i]-res[i-1]
+        if(value>max){
+            max=value;
+            console.log(max,1111)
+            start=i-1;
+        }
+    }
+    console.log(max,start)
+    console.log(res[start])
+var output=[];
+if(res.length==1||res.length==0){
+    output=[-1,-1]
+}else{
+    output=[res[start],res[start+1]]
+}
+    str=output.join(' ')
+    console.log(output)
+//    var n='10';
+//    var str='4 3 2 1 3 1 4 5 6 1';
+//    var array=str.split(' ');
+//    var preNum=array[0];
+//    var count=0;
+//    var res=[];
+//    var state=true;
+////    for(var i=0;i<n;i++){
+////        if(array[i]>preNum){
+////            break;
+////        }
+////        preNum=array[i];
+////    }
+//    for(var i=1;i<n;i++){
+//        if(array[i]>preNum&&state==false){
+//            state=true;
+//            res.push(count);
+//            //count++;
+//            count++;
+//        }else if(array[i]<preNum&&state==true){
+//            state=false;
+//            count++;
+//        }else{
+//            count++
+//        }
+//        preNum=array[i];
+//    }
+//    console.log(res)
+//    var max=0;
+//    var res1=[]
+//    var n=0;
+//    for(var i=1;i<res.length-1;i++){
+//        if(res[i+1]-res[i]>max){
+//            n=i;
+//        }
+//    }
+//    res1[0]=res[n]
+//    res1[1]=res[n+1]
+//    str=res1.join(" ");
+//    console.log(str);
+
+//    var a=document.getElementsByClassName('a')[0];
+//    console.log(a.parentNode)
+//    var a = 'abc';
+//    var b = new String('abc');
+//    var test6= new String("999 888");
+//    console.log(test6,typeof(test6))
+//    function outFn() {
+//        this.num = 10;
+//        function inFn(){
+//            var num = 100;
+//            alert(this.num);  //输出的结果________
+//            alert(num);       //输出的结果________
+//        }
+//        return inFn;
+//    }
+//    outFn()();
+//var i = 0, timer, j = 0;
+////while(i++ < 3) {
+////    timer = window.setTimeout(function(){
+////        j++;
+////        alert(j);
+////    }, 500);
+////}
+//for(var i=0;i<7;i++){
+//    timer = window.setTimeout(function(){
+//        j++;
+//        console.log(j);
+//    }, 4000);
+//}
+//clearTimeout(timer);
+</script>
+</body>
+</html>
