@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #demo{width:200px;}
+    </style>
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+<script>
+    function getStyle(obj , style) {
+        if(obj.currentStyle) {
+            return obj.currentStyle[style];//针对IE获取
+        } else {
+            return getComputedStyle(obj , false)[style];//非IE获取
+        }
+    }
+    window.onload=function(){
+        var demo=document.getElementById('demo');
+        console.log(getStyle(demo,'width'))
+    }
+</script>
+</html>

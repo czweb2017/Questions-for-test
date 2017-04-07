@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function a(s,d){
+        var b=[2,4,5];
+        var c= new Array(2,3,4)
+        if(arguments.callee){alert('监测到伪数组！')}
+        if(b.callee){alert('b监测到伪数组！')}
+        console.log(arguments,b,typeof(b),typeof(c))
+    }
+    a(3,2)
+    console.log(isNaN(NaN),NaN===NaN)
+    console.log(undefined==undefined,undefined===undefined,null==undefined,null===undefined,null==null,null===null)
+</script>
+</body>
+</html>
