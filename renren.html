@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    var sum='4';
+//    var str='4 22 8 12';
+//    var chLen=str.split(" ");
+//    chLen=chLen.sort(function(a,b){
+//        return a-b;
+//    })
+//    var min=chLen[0];
+//    console.log(min,'min')
+//    var count=0;
+//    for(var i=min;i>1;i--){
+//        var state=0;
+//        for(var j=0;j<chLen.length;j++){
+//            if(chLen[j]%i==0){
+//                state++;
+//            }
+//        }
+//        if(state==(chLen.length)){
+//            console.log(i)
+//            break;
+//        }
+//    }
+
+
+//var n='7';//问题数
+//var m='40';//走路时间
+//var timeSum=4*60;//总时间
+//var timeLast=timeSum-m;//做题时间
+//var res=0//能完成问题数
+//function ansTime(n){//回答第n个问题需要多少时间
+//    var res=0;
+//    for(var i=0;i<=n;i++){
+//        res=res+i*5;
+//    }
+//    return res;
+//}
+////alert(ansTime(2))
+//for(var i=0;i<=n;i++){
+//    if(ansTime(i)<=timeLast&&ansTime(i+1)>timeLast){
+//        console.log(i)
+//        break;
+//    }else if(i==n){
+//        console.log(i)
+//        break;
+//    }
+//}
+//
+//
+//var num=[3,9,2];//记录方格数量
+//var data=[]//记录数据
+////for(var i=0;i<3;i++){
+////    num[i]=read_line();
+////    data[i]=read_line();
+////}
+//function pre(n,arr){//输入结束位置
+//    var sum=0
+//    for(var i=0;i<n+1;i++){
+//        sum=sum+arr[i];
+//    }
+//    return sum;
+//}//前一段求和
+//function next(n,arr){//输入起始位置
+//    var sum=0;
+//    for(var i=n+1;i<arr.length;i++){
+//        sum=sum+arr[i];
+//    }
+//    return sum;
+//}
+//function show(len,arr){
+//    var count=0
+//    for(var i=0;i<len-1;i++){
+//        //console.log(pre(i,arr),next(i,arr))
+//        if(pre(i,arr)==next(i,arr)){
+//            count++;
+//        }
+//    }
+//    return count;
+//}
+var num=[3,9,2]
+var data=[[1,1,1],[1,5,-6,7,9,-16,0,-2,2],[0,0]]
+//for(var i=0;i<3;i++){//打印数据
+//    console.log(show(num[i],data[i]));
+//}
+//后一段求和
+//var num=[];//记录方格数量
+//var data=[]//记录数据
+var str='';
+//for(var i=0;i<3;i++){//获取数据
+//    num[i]=read_line();
+//    str=read_line();
+//    data[i]=str.split(" ");
+//}
+function pre(n,arr){//输入结束位置
+    var sum=0
+    for(var i=0;i<n+1;i++){
+        sum=sum+arr[i];
+    }
+    return sum;
+}//前一段求和
+function next(n,arr){//输入起始位置
+    var sum=0;
+    for(var i=n+1;i<arr.length;i++){
+        sum=sum+arr[i];
+    }
+    return sum;
+}
+function show(len,arr){
+    var count=0
+    for(var i=0;i<len-1;i++){
+        //console.log(pre(i,arr),next(i,arr))
+        if(pre(i,arr)==next(i,arr)){
+            count++;
+        }
+    }
+    return count;
+}
+for(var i=0;i<3;i++){//打印数据
+    console.log(show(num[i],data[i]));
+}
+</script>
+</body>
+</html>
