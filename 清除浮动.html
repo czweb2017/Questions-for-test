@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus?">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>title</title>
+  <style media="screen">
+    .float{
+      float: left;
+      width: 100px;
+      height:50px;
+      border:1px solid #aaa;
+    }
+    .nor{
+      width: 100px;
+      height:50px;
+      border:1px solid #aaa;
+    }
+    .hi:after{
+      content:'.';
+      display:block;
+      height:0;
+      clear:both;
+      visibility;hidden;
+    }
+    .hi{
+      zoom:1;
+    }
+  </style>
+ </head>
+ <body>
+   <h1>1为浮动样式 2为默认</h1>
+   <div class="nor">
+     2
+   </div>
+   <div  class="float">
+     1
+   </div>
+   <div class="nor">
+     2
+   </div>
+   <h1>添加父级div，并设置高度</h1>
+   <div class="nor">
+     2
+   </div>
+   <div style="height:50px;">
+     <div  class="float">
+       1
+     </div>
+   </div>
+   <div class="nor">
+     2
+   </div>
+   <h1>结尾处添加div标签 设置clear：both</h1>
+   <div class="nor">
+     2
+   </div>
+   <div  class="float">
+     1
+   </div>
+   <div style="clear:both;">
+
+   </div>
+   <div class="nor">
+     2
+   </div>
+   <h1>父级div定义伪类after和zoom</h1>
+   <div class="nor">
+     2
+   </div>
+   <div class="hi">
+     <div  class="float">
+       1
+     </div>
+   </div>
+   <div class="nor">
+     2
+   </div>
+   <h1>父级定义overflow:hidden或者auto 就不再写了</h1>
+   <div class="nor">
+     2
+   </div>
+   <div style="overflow:hidden;">
+     <div  class="float">
+       1
+     </div>
+   </div>
+   <div class="nor">
+     2
+   </div>
+   <h1>父级定义display:table;</h1>
+   <div class="nor">
+     2
+   </div>
+   <div style="display:table;">
+     <div class="float">
+       1
+     </div>
+   </div>
+   <div class="nor">
+     2
+   </div>
+ </body>
+</html>
